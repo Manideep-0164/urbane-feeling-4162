@@ -15,12 +15,12 @@ userRouter.post("/register",async(req,res)=>{
         if(exits.length!==0) res.send({"msg":'User Already Exists, Please Login'});
         else {
             bcrypt.hash(password, 5, async(err,hash)=>{
-                if(err) res.send({"error":err.message});
-                else{
+                if(hash){
                     const user = new UserModel({name,email,mobile,password:hash});
                     await user.save();
-                    res.send({"msg":'Successfully Registered, Kindly Login to Continue'});
+                    res.send({"msg":'Successfully Registered, Please Login to Continue'});
                 }
+                else res.send({"error":err});
             })
         }
     }
@@ -39,7 +39,7 @@ userRouter.post("/register/admin",async(req,res)=>{
         if(exits.length!==0) res.send({"msg":'User Already Exists, Please Login'});
         else {
             bcrypt.hash(password, 6, async(err,hash)=>{
-                if(err) res.send({"error":err.message});
+                if(err) res.send({"error":err});
                 else{
                     const user = new AdminModel({name,email,password:hash});
                     await user.save();
@@ -63,11 +63,11 @@ userRouter.post("/login/admin",async(req,res)=>{
         if(exits.length==0) res.send({"msg":"Authorization failed"});
         else {
             bcrypt.compare(password, exits[0].password, async(err,result)=>{
-                if(err) res.send({"error":`Wrong CRED / ${err.message}`});
-                else{
+                if(result){
                     const token = jwt.sign({userID:exits[0]._id},process.env.JWT_KEY_A,{ expiresIn:"24H"});
                     res.send({"msg":'Welcome Admin', "token":token});
                 }
+                else res.send({"error":`Wrong CRED / ${err}`});
             })
         }
     }
@@ -83,19 +83,20 @@ userRouter.post("/login",async(req,res)=>{
     const {email,password} = req.body;
     try{
         const exits = await UserModel.find({email});
+        // console.log(exits)
         if(exits.length==0) res.send({"msg":"User Doesn't Exists, Please Register"});
         else {
             bcrypt.compare(password, exits[0].password, async(err,result)=>{
-                if(err) res.send({"error":`Wrong CRED / ${err.message}`});
-                else{
+                if(result){
                     const token = jwt.sign({userID:exits[0]._id},process.env.JWT_KEY_U,{ expiresIn:"24H"} );
-                    res.send({"msg":'Login Success', "token":token});
+                    res.send({"msg":'Login Success', "token":token, "name":exits[0].name});
                 }
+                else res.send({"invalid":`Wrong CRED / ${err}`});
             })
         }
     }
     catch(err){
-        res.send({"error":err.message});
+        res.send({"err":err.message});
     }
 });
 

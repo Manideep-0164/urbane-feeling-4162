@@ -21,13 +21,13 @@ app.use(authenticateAdmin);
 app.use("/products",adminRouter);
 
 
+const PORT = process.env.port || 2020
 
-
-app.listen(process.env.port, async(req,res)=>{
+app.listen(PORT, async(req,res)=>{
     try{
         await connection;
         console.log("\n<---- Connected to DB ---->\n");
-        console.log(`Server is Running at the port: http://localhost:${process.env.port}`)
+        console.log(`Server is Running at the port: http://localhost:${PORT}`)
     }
     catch(err){
         console.log(err);
