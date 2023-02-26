@@ -99,7 +99,7 @@ input::-webkit-inner-spin-button {
     margin-top: 19px;
     display: block;
     margin: auto;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     opacity: 0.9;
 }
 
@@ -117,7 +117,7 @@ input::-webkit-inner-spin-button {
 .form-cont>p {
     text-align: center;
     font-size: 12px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .form-cont>p>span {
@@ -171,4 +171,36 @@ input::-webkit-inner-spin-button {
     font-size: 20px;
     color: white;
     background-color: #6b6c8d;
+}
+
+.exit-form:hover{
+    background-color: #636490;
+}
+
+.loader, .loader-l{
+    width: 48%;
+    display: flex;
+    color: white;
+    justify-content: center;
+    background-color: #658dcb;
+    margin: auto;
+    text-align: center;
+    height: 40px;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 14px;
+    display: none;
+}
+.loader-l{
+    margin-top: 20px;
+}
+
+.spin{
+    animation: spin 1.3s ease-in-out infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
 }
