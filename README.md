@@ -1,14 +1,14 @@
 # urbane-feeling-4162
 
 Project     :- industrybuying.com<br/>
-objective   :- It is an E-commerce website, where we can buy and sell the products
-             Electronic gadgets, office supplies and agricultural products like pumps and controllers and many more electronics products should be sold
-Tech-Stack  :- 1.frontend
-                -> HTML
-                -> CSS
-                -> Vanilla Javascript
-               2.backend
-                -> node.js
-                -> MongoDB Atlas
-                -> Mongoose
+objective   :- It is an E-commerce website, where we can buy and sell the products<br/>
+             Electronic gadgets, office supplies and agricultural products like pumps and controllers and many more electronics products should be sold<br/>
+Tech-Stack  :- 1.frontend<br/>
+                -> HTML<br/>
+                -> CSS<br/>
+                -> Vanilla Javascript<br/>
+               2.backend<br/>
+                -> node.js<br/>
+                -> MongoDB Atlas<br/>
+                -> Mongoose<br/>
 Tools       :-
