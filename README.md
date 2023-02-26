@@ -1,6 +1,6 @@
 # urbane-feeling-4162
 
-Project     :- industrybuying.com<br/>
+Project<br/> industrybuying.com<br/>
 objective   :- It is an E-commerce website, where we can buy and sell the products<br/>
              Electronic gadgets, office supplies and agricultural products like pumps and controllers and many more electronics products should be sold<br/>
 Tech-Stack  :- 1.frontend<br/>
