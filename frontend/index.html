@@ -9,6 +9,11 @@
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/256/marriott-hotels.png">
     <link rel="stylesheet" href="./styles//style.css">
     <link rel="stylesheet" href="./styles/login.css">
+
+    <!-- Fontawesome CDN Link  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -34,7 +39,7 @@
         <div class="nav-items">
             <ul>
                 <li><img src="https://www.industrybuying.com/static/svg/signin-icon.svg" alt="" /><a href="#"
-                        id="user-name">Login</a></li>
+                        id="user-name">Sign-in</a></li>
                 <li><img style="width: 16px;" src="https://www.industrybuying.com/static/svg/track-order-icon.svg"
                         alt="" /><a href="#">Orders</a></li>
                 <li style="gap:0px; position: relative;"><svg viewBox="0 0 24 24" fill="none"
@@ -884,7 +889,7 @@
 
         <div class="form-cont" id="signup-form-cont">
             <span id="exit" class="exit-form">&times;</span>
-            <h2 class="form-title">Login/Register</h2>
+            <h2 class="form-title">Register</h2>
             <form action="" class="login-form" id="sign-up-form">
                 <div class="form-item">
                     <input type="text" placeholder="Username" required id="userName">
@@ -902,6 +907,10 @@
                     <input type="password" placeholder="Confirm Password" required id="confirmpassword">
                 </div>
                 <div class="form-item">
+                    <!-- <span class="loader"></span> -->
+                    <div class="loader">
+                        <i class="fa-solid fa-circle-notch icon"></i>
+                    </div>
                     <input type="submit" value="Submit" id="submit-btn">
                 </div>
             </form>
@@ -910,7 +919,7 @@
 
         <div class="form-cont" id="signin-form-cont">
             <span id="exit-l" class="exit-form">&times;</span>
-            <h2 class="form-title">Login/Register</h2>
+            <h2 class="form-title">Login</h2>
             <form action="" class="login-form signin-form" id="sign-in-form">
                 <div class="form-item">
                     <input type="email" placeholder="Example@gmail.com" required id="email-l">
@@ -919,6 +928,9 @@
                     <input type="password" placeholder="Password" required id="password-l">
                 </div>
                 <div class="form-item">
+                    <div class="loader loader-l">
+                        <i class="fa-solid fa-circle-notch icon"></i>
+                    </div>
                     <input type="submit" value="Submit" id="submit-btn-l">
                 </div>
             </form>
