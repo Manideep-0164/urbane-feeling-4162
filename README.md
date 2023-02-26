@@ -1,16 +1,16 @@
 # urbane-feeling-4162
 
-Project<br/> industrybuying.com<br/>
-objective   :- <br/>It is an E-commerce website, where we can buy and sell the products.
+Project<br/> &nbsp;&nbsp;industrybuying.com<br/>
+objective   :- <br/>&nbsp;&nbsp;It is an E-commerce website, where we can buy and sell the products.
              Electronic gadgets, office supplies and agricultural products like pumps and controllers and many more electronics products should be sold<br/>
 Tech-Stack  :- <br/>
-1.frontend<br/>
-                -> HTML<br/>
-                -> CSS<br/>
-                -> Vanilla Javascript<br/>
-2.backend<br/>
-                -> node.js<br/>
-                -> MongoDB Atlas<br/>
-                -> Mongoose<br/>
+&nbsp;&nbsp;1.frontend<br/>
+                &nbsp;&nbsp;&nbsp;-> HTML<br/>
+                &nbsp;&nbsp;&nbsp;-> CSS<br/>
+                -&nbsp;&nbsp;&nbsp;> Vanilla Javascript<br/>
+&nbsp;&nbsp;2.backend<br/>
+                &nbsp;&nbsp;&nbsp;-> node.js<br/>
+                &nbsp;&nbsp;&nbsp;-> MongoDB Atlas<br/>
+                &nbsp;&nbsp;&nbsp;-> Mongoose<br/>
 Tools       :-<br/>
-VScode<br/>netlify<br/>cyclic<br/>MongoDB Atlas<br/>
+&nbsp;&nbsp;&nbsp;VScode<br/>&nbsp;&nbsp;&nbsp;netlify<br/>&nbsp;&nbsp;&nbsp;cyclic<br/>&nbsp;&nbsp;&nbsp;MongoDB Atlas<br/>
