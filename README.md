@@ -12,4 +12,5 @@ Tech-Stack  :- <br/>
                 -> node.js<br/>
                 -> MongoDB Atlas<br/>
                 -> Mongoose<br/>
-Tools       :-
+Tools       :-<br/>
+VScode<br/>netlify<br/>cyclic<br/>MongoDB Atlas<br/>
