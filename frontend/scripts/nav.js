@@ -1,6 +1,12 @@
-let navbar = document.querySelector("nav");
-let sticky = navbar.offsetTop;
+
 let userName = localStorage.getItem("name") || null;
+
+// Making Navbar sticky on Scroll
+
+let navbar = document.querySelector("nav");
+let helpTxt = document.querySelector(".help-text");
+let hlpSticky = helpTxt.offsetTop;
+let sticky = navbar.offsetTop;
 
 window.onscroll = function () {
     myFunction();
@@ -9,10 +15,31 @@ window.onscroll = function () {
 function myFunction() {
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
+        helpTxt.classList.add("sticky")
     } else {
         navbar.classList.remove("sticky");
+        helpTxt.classList.remove("sticky")
     }
 }
+
+// Removing the Side-Menu bar from the homepage by reaching the footer
+
+let menu = document.getElementsByClassName("menu-bar")
+
+window.addEventListener('scroll', () => {
+    
+    const scrollPosition = window.pageYOffset;      // Get the scroll position
+
+    if (scrollPosition >= 3968.285888671875) {      //3987.142822265625
+        menu[0].style.display = 'none'
+    }
+    else {
+        menu[0].style.display = 'block'
+    }
+
+    console.log(scrollPosition);                    // Log the scroll position
+});
+
 
 document.getElementById("user-name").addEventListener("click", () => {
     if (userName == null) {

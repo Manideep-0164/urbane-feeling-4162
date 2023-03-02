@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="./styles//style.css">
     <link rel="stylesheet" href="./styles/login.css">
 
+    <!-- Scroll method from jquery  -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(document).scrollTop() < 2000) {
+                    // $(".menu-bar").addClass("remove-fixed");
+                    document.querySelector(".landing-body>.menu-bar").classList.remove("remove-fixed")
+                } else {
+                    document.querySelector(".landing-body>.menu-bar").classList.add("remove-fixed")
+                    // $(".menu-bar").removeClass("remove-fixed");
+                }
+            });
+        });
+    </script>
+
     <!-- Fontawesome CDN Link  -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -17,53 +34,60 @@
 </head>
 
 <body>
-    <p class="help-text">For any query, email us at &nbsp;<span style="color:red">care@industrybuying.com</span>&nbsp;or
-        call us on&nbsp;<span style="color:red">+91 8448449073</span></p>
 
     <nav>
-        <div class="logo">
-            <a href="index.html" style="color: white;" id="home-logo">electro<span style="color: red;">mart</span></a>
-        </div>
-        <div class="search nav-left-item">
-            <input type="text" class="search__input" placeholder="Find your product" id="search-input">
-            <button class="search__button" id="search-btn">
-                <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
-                    <g>
-                        <path
-                            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                        </path>
-                    </g>
-                </svg>
-            </button>
-        </div>
-        <div class="nav-items">
-            <ul>
-                <li><img src="https://www.industrybuying.com/static/svg/signin-icon.svg" alt="" /><a href="#"
-                        id="user-name">Sign-in</a></li>
-                <li><img style="width: 16px;" src="https://www.industrybuying.com/static/svg/track-order-icon.svg"
-                        alt="" /><a href="#">Orders</a></li>
-                <li style="gap:0px; position: relative;"><svg viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg" style="width:24px;">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC">
-                        </g>
-                        <g id="SVGRepo_iconCarrier">
+        <!-- <div class="fix-nav"> -->
+        <p class="help-text">For any query, email us at &nbsp;<span
+                style="color:red">care@industrybuying.com</span>&nbsp;or
+            call us on&nbsp;<span style="color:red">+91 8448449073</span></p>
+        <!-- </div> -->
+        <div class="nav-body">
+            <div class="logo">
+                <a href="index.html" style="color: white;" id="home-logo">electro<span
+                        style="color: red;">mart</span></a>
+            </div>
+            <div class="search nav-left-item">
+                <input type="text" class="search__input" placeholder="Find your product" id="search-input">
+                <button class="search__button" id="search-btn">
+                    <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <g>
                             <path
-                                d="M11.25 18.75C11.25 19.58 10.58 20.25 9.75 20.25C8.92 20.25 8.25 19.58 8.25 18.75C8.25 17.92 8.92 17.25 9.75 17.25C10.58 17.25 11.25 17.92 11.25 18.75ZM16.25 17.25C15.42 17.25 14.75 17.92 14.75 18.75C14.75 19.58 15.42 20.25 16.25 20.25C17.08 20.25 17.75 19.58 17.75 18.75C17.75 17.92 17.08 17.25 16.25 17.25ZM20.73 7.68L18.73 15.68C18.65 16.01 18.35 16.25 18 16.25H8C7.64 16.25 7.33 15.99 7.26 15.63L5.37 5.25H4C3.59 5.25 3.25 4.91 3.25 4.5C3.25 4.09 3.59 3.75 4 3.75H6C6.36 3.75 6.67 4.01 6.74 4.37L7.17 6.75H20C20.23 6.75 20.45 6.86 20.59 7.04C20.73 7.22 20.78 7.46 20.73 7.68ZM19.04 8.25H7.44L8.62 14.75H17.41L19.04 8.25Z"
-                                fill="#fcfcfc"></path>
-                        </g>
-                    </svg><a href="#" style="position:relative">Cart<span id="badge">0</span></a></li>
-                <li style="gap: 3px;"><svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd"
-                                d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M13.7071068,15.2928932 L12.2928932,16.7071068 L7.58578644,12 L12.2928932,7.29289322 L13.7071068,8.70710678 L10.4142136,12 L13.7071068,15.2928932 Z">
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
                             </path>
                         </g>
-                    </svg><a href="#" id="log-out">About</a></li>
-            </ul>
+                    </svg>
+                </button>
+            </div>
+            <div class="nav-items">
+                <ul>
+                    <li><img src="https://www.industrybuying.com/static/svg/signin-icon.svg" alt="" /><a href="#"
+                            id="user-name">Sign-in</a></li>
+                    <li><img style="width: 16px;" src="https://www.industrybuying.com/static/svg/track-order-icon.svg"
+                            alt="" /><a href="#">Orders</a></li>
+                    <li style="gap:0px; position: relative;"><svg viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="width:24px;">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="#CCCCCC">
+                            </g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M11.25 18.75C11.25 19.58 10.58 20.25 9.75 20.25C8.92 20.25 8.25 19.58 8.25 18.75C8.25 17.92 8.92 17.25 9.75 17.25C10.58 17.25 11.25 17.92 11.25 18.75ZM16.25 17.25C15.42 17.25 14.75 17.92 14.75 18.75C14.75 19.58 15.42 20.25 16.25 20.25C17.08 20.25 17.75 19.58 17.75 18.75C17.75 17.92 17.08 17.25 16.25 17.25ZM20.73 7.68L18.73 15.68C18.65 16.01 18.35 16.25 18 16.25H8C7.64 16.25 7.33 15.99 7.26 15.63L5.37 5.25H4C3.59 5.25 3.25 4.91 3.25 4.5C3.25 4.09 3.59 3.75 4 3.75H6C6.36 3.75 6.67 4.01 6.74 4.37L7.17 6.75H20C20.23 6.75 20.45 6.86 20.59 7.04C20.73 7.22 20.78 7.46 20.73 7.68ZM19.04 8.25H7.44L8.62 14.75H17.41L19.04 8.25Z"
+                                    fill="#fcfcfc"></path>
+                            </g>
+                        </svg><a href="#" style="position:relative">Cart<span id="badge">0</span></a></li>
+                    <li style="gap: 3px;"><svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd"
+                                    d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M13.7071068,15.2928932 L12.2928932,16.7071068 L7.58578644,12 L12.2928932,7.29289322 L13.7071068,8.70710678 L10.4142136,12 L13.7071068,15.2928932 Z">
+                                </path>
+                            </g>
+                        </svg><a href="#" id="log-out">About</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -1021,7 +1045,9 @@
 </body>
 
 <script src="./scripts/nav.js"></script>
+<script>
 
+</script>
 <script src="./scripts/login.js"></script>
 
 </html>
