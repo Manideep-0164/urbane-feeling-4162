@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/256/marriott-hotels.png">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="/Styles/products.css">
+
+    <!-- Scroll method from jquery  -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(document).scrollTop() < 2000) {
+                    document.querySelector(".landing-body>.menu-bar").classList.remove("fixed-menu")
+                } else {
+                    document.querySelector(".landing-body>.menu-bar").classList.add("fixed-menu")
+                }
+            });
+        });
+    </script> -->
+
+    <!-- Fontawesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <!-- Loader  -->
+
+    <div class="loaderRectangle">
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Loader Script  -->
+    <script>
+        document.querySelector('.loaderRectangle').classList.add('show-loader');
+        document.querySelector('body').style.overflowY = 'hidden';
+    </script>
+
+    <!-- Feedback Text  -->
+
+    <div class="feed-back">Feedback</div>
+
+    <nav id="Product-nav">
+        <p class="help-text">For any query, email us at &nbsp;<span
+                style="color:red">care@industrybuying.com</span>&nbsp;or
+            call us on&nbsp;<span style="color:red">+91 8448449073</span></p>
+
+        <div class="nav-body">
+            <div class="logo">
+                <a href="index.html" style="color: white;" id="home-logo">electro<span
+                        style="color: red;">mart</span></a>
+            </div>
+            <div class="search nav-left-item">
+                <input type="text" class="search__input" placeholder="Find your product" id="search-input">
+                <button class="search__button" id="search-btn">
+                    <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <g>
+                            <path
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                            </path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="nav-items">
+                <ul>
+                    <li><img src="https://www.industrybuying.com/static/svg/signin-icon.svg" alt="" /><a href="#"
+                            onclick="return false" id="user-name">Sign-in</a></li>
+                    <li><img style="width: 26px; margin-right: -4px;" src="./images/box-svgrepo-com.png" alt="" /><a
+                            href="#" onclick="return false">Orders</a></li>
+                    <li style="gap:0px; position: relative;"><svg viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" style="width:24px;">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="#CCCCCC">
+                            </g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M11.25 18.75C11.25 19.58 10.58 20.25 9.75 20.25C8.92 20.25 8.25 19.58 8.25 18.75C8.25 17.92 8.92 17.25 9.75 17.25C10.58 17.25 11.25 17.92 11.25 18.75ZM16.25 17.25C15.42 17.25 14.75 17.92 14.75 18.75C14.75 19.58 15.42 20.25 16.25 20.25C17.08 20.25 17.75 19.58 17.75 18.75C17.75 17.92 17.08 17.25 16.25 17.25ZM20.73 7.68L18.73 15.68C18.65 16.01 18.35 16.25 18 16.25H8C7.64 16.25 7.33 15.99 7.26 15.63L5.37 5.25H4C3.59 5.25 3.25 4.91 3.25 4.5C3.25 4.09 3.59 3.75 4 3.75H6C6.36 3.75 6.67 4.01 6.74 4.37L7.17 6.75H20C20.23 6.75 20.45 6.86 20.59 7.04C20.73 7.22 20.78 7.46 20.73 7.68ZM19.04 8.25H7.44L8.62 14.75H17.41L19.04 8.25Z"
+                                    fill="#fcfcfc"></path>
+                            </g>
+                        </svg><a href="#" onclick="return false" style="position:relative">Cart<span
+                                id="badge">0</span></a></li>
+                    <li style="gap: 3px;">
+                        <img style="width: 24px; margin-right: -1px;" id="logout-img"
+                            src="./images/about-svgrepo-com.png" alt="" />
+                        <a href="#" onclick="return false" id="log-out">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN PART ************************* LOGIN PART ******************************* LOGIN PART  -->
+
+    <div class="login-div">
+
+        <div class="form-banner">
+            <img src="https://cdn.pixabay.com/photo/2022/12/10/13/46/attack-7647136_960_720.png" alt="">
+        </div>
+
+
+        <div class="form-cont" id="signup-form-cont">
+            <span id="exit" class="exit-form">&times;</span>
+            <h2 class="form-title">Register</h2>
+            <form action="" class="login-form" id="sign-up-form">
+                <div class="form-item">
+                    <input type="text" placeholder="Username" required id="userName">
+                </div>
+                <div class="form-item">
+                    <input type="email" placeholder="Example@gmail.com" required id="email">
+                </div>
+                <div class="form-item">
+                    <input type="number" placeholder="Mobile Number" required id="phone">
+                </div>
+                <div class="form-item">
+                    <input type="password" placeholder="Password" required id="password">
+                </div>
+                <div class="form-item">
+                    <input type="password" placeholder="Confirm Password" required id="confirmpassword">
+                </div>
+                <div class="form-item">
+                    <!-- <span class="loader"></span> -->
+                    <div class="loader">
+                        <i class="fa-solid fa-circle-notch icon"></i>
+                    </div>
+                    <input type="submit" value="Submit" id="submit-btn">
+                </div>
+            </form>
+            <p id="new-user">Already have an account?<span id="login-page">sign-in</span></p>
+        </div>
+
+        <div class="form-cont" id="signin-form-cont">
+            <span id="exit-l" class="exit-form">&times;</span>
+            <h2 class="form-title">Login</h2>
+            <form action="" class="login-form signin-form" id="sign-in-form">
+                <div class="form-item">
+                    <input type="email" placeholder="Example@gmail.com" required id="email-l">
+                </div>
+                <div class="form-item">
+                    <input type="password" placeholder="Password" required id="password-l">
+                </div>
+                <div class="form-item">
+                    <div class="loader loader-l">
+                        <i class="fa-solid fa-circle-notch icon"></i>
+                    </div>
+                    <input type="submit" value="Submit" id="submit-btn-l">
+                </div>
+            </form>
+            <p id="existing-user">New user?<span id="register-page">sign-up</span></p>
+        </div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <!-- LANDING PART ********************** LANDING PART **************************** LANDING PART  -->
+
+
+    <div class="product-top">
+        <!-- <h2 class="heading">GRAIN PROCESSING</h2>
+        <ul>
+            <li>⟨</li>
+            <li>Agriculture & Gardening - Made In Japan</li>
+            <li>Agriculture Implements</li>
+            <li>Artificial Grass</li>
+            <li>Blowers</li>
+            <li>Brush Cutter and Accessories</li>
+            <li>Chaff Cutter</li>
+            <li>⟩</li>
+        </ul> -->
+    </div>
+
+    <div class="product-data">
+        <div class="product-filter">
+            <div class="filter-type category">
+                <h2 class="heading">CATEGORIES</h2>
+                <h2 class="sub-heading">Grain Processing Machine</h2>
+            </div>
+            <div class="filter-type brands">
+                <h2 class="heading">BRANDS</h2>
+                <div class="brand-items">
+                    <!-- <label for="agripro"><div><input type="checkbox" class="brandCheckbox" value="AgriPro" id="agripro"><p >AgriPro <span>(15)</span></p></div></label>
+                    <label for="stethel"><div><input type="checkbox" class="brandCheckbox" value="Stethel" id="stethel"><p >Stethel</p></div></label>
+                    <label for="confider"><div><input type="checkbox" class="brandCheckbox" value="Confider" id="confider"><p >Confider</p></div></label>
+                    <label for="ricoitaly"><div><input type="checkbox" class="brandCheckbox" value="Rico Italy" id="ricoitaly"><p >Rico Italy</p></div></label>
+                    <label for="xtrapower"><div><input type="checkbox" class="brandCheckbox" value="Xtra Power" id="xtrapower"><p >Xtra Power</p>
+                    </div></label> -->
+                </div>
+            </div>
+            <div class="filter-type price brands">
+                <h2 class="heading">PRICE</h2>
+                <div class="brand-items">
+                    <label for="price1">
+                        <div><input type="checkbox" class="brandCheckbox" value="100 1000" id="price1">
+                            <p>100 - 1000</p>
+                        </div>
+                    </label>
+                    <label for="price2">
+                        <div><input type="checkbox" class="brandCheckbox" value="1001 5000" id="price2">
+                            <p>1001 - 5000</p>
+                        </div>
+                    </label>
+                    <label for="price3">
+                        <div><input type="checkbox" class="brandCheckbox" value="5001 12000" id="price3">
+                            <p>5001 - 12000</p>
+                        </div>
+                    </label>
+                    <label for="price4">
+                        <div><input type="checkbox" class="brandCheckbox" value="12001 30000" id="price4">
+                            <p>12001 - 30000</p>
+                        </div>
+                    </label>
+                    <label for="price5">
+                        <div><input type="checkbox" class="brandCheckbox" value="30001 118000" id="price5">
+                            <p>30001 - 118000</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="product-heading">
+                <h1 class="GPM"><span style="font-size: 14px; margin-top: 2.8px;"></span></h1>
+                <select id="sort">
+                    <option value="">Sort</option>
+                    <option value="low-high">Price - Low to High</option>
+                    <option value="low-high">Price - High to Low</option>
+                    <option value="low-high">Name - Low to High</option>
+                    <option value="low-high">Name - High to Low</option>
+                </select>
+            </div>
+            <div class="products-container">
+                <div class="card-container">
+                    <!-- Appending Cards here  -->
+                    <!-- <div class="card">
+                    <div class="img"><img src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.82125517_1670416542273.webp" alt=""></div>
+                    <div class="info">
+                        <p class="name">AgriPro 3 HP Butterfly Combined Rice Mill Machine</p>
+                        <p class="brand">AgriPro</p>
+                        <p class="price">Rs. <span>26500</span> / Piece</p>
+                    </div>
+                    <button class="addToCart">
+                        ADD TO CART
+                    </button>
+                </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER OF THE WEBSITE ********************** FOOTER OF THE WEBSITE ****************************FOOTR OF THE WEBSITE  -->
+
+    <!-- Re-using the code of footer from footer.html file using jQuery -->
+    <div id="footer-content"></div>
+
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> <!--Getting jquery-->
+<script>
+    $(function () {
+        $('#footer-content').load('/footer.html'); // appending footer to container(footer-content) and loading it
+    });
+</script>
+
+<script src="./scripts/nav.js"></script>
+
+<script src="./scripts/login.js"></script>
+
+<script src="./scripts/products.js"></script>
+
+</html>

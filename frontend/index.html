@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Indutrial and Business Supplies</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/256/marriott-hotels.png">
-    <link rel="stylesheet" href="./styles//style.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/login.css">
 
     <!-- Scroll method from jquery  -->
@@ -17,11 +17,11 @@
         $(document).ready(function () {
             $(window).scroll(function () {
                 if ($(document).scrollTop() < 2000) {
-                    // $(".menu-bar").addClass("remove-fixed");
-                    document.querySelector(".landing-body>.menu-bar").classList.remove("remove-fixed")
+                    // $(".menu-bar").addClass("fixed-menu");
+                    document.querySelector(".landing-body>.menu-bar").classList.remove("fixed-menu")
                 } else {
-                    document.querySelector(".landing-body>.menu-bar").classList.add("remove-fixed")
-                    // $(".menu-bar").removeClass("remove-fixed");
+                    document.querySelector(".landing-body>.menu-bar").classList.add("fixed-menu")
+                    // $(".menu-bar").removeClass("fixed-menu");
                 }
             });
         });
@@ -61,9 +61,9 @@
             <div class="nav-items">
                 <ul>
                     <li><img src="https://www.industrybuying.com/static/svg/signin-icon.svg" alt="" /><a href="#"
-                            id="user-name">Sign-in</a></li>
-                    <li><img style="width: 16px;" src="https://www.industrybuying.com/static/svg/track-order-icon.svg"
-                            alt="" /><a href="#">Orders</a></li>
+                            onclick="return false" id="user-name">Sign-in</a></li>
+                    <li><img style="width: 26px; margin-right: -4px;" src="./images/box-svgrepo-com.png" alt="" /><a
+                            href="#" onclick="return false">Orders</a></li>
                     <li style="gap:0px; position: relative;"><svg viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg" style="width:24px;">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -75,17 +75,13 @@
                                     d="M11.25 18.75C11.25 19.58 10.58 20.25 9.75 20.25C8.92 20.25 8.25 19.58 8.25 18.75C8.25 17.92 8.92 17.25 9.75 17.25C10.58 17.25 11.25 17.92 11.25 18.75ZM16.25 17.25C15.42 17.25 14.75 17.92 14.75 18.75C14.75 19.58 15.42 20.25 16.25 20.25C17.08 20.25 17.75 19.58 17.75 18.75C17.75 17.92 17.08 17.25 16.25 17.25ZM20.73 7.68L18.73 15.68C18.65 16.01 18.35 16.25 18 16.25H8C7.64 16.25 7.33 15.99 7.26 15.63L5.37 5.25H4C3.59 5.25 3.25 4.91 3.25 4.5C3.25 4.09 3.59 3.75 4 3.75H6C6.36 3.75 6.67 4.01 6.74 4.37L7.17 6.75H20C20.23 6.75 20.45 6.86 20.59 7.04C20.73 7.22 20.78 7.46 20.73 7.68ZM19.04 8.25H7.44L8.62 14.75H17.41L19.04 8.25Z"
                                     fill="#fcfcfc"></path>
                             </g>
-                        </svg><a href="#" style="position:relative">Cart<span id="badge">0</span></a></li>
-                    <li style="gap: 3px;"><svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path fill-rule="evenodd"
-                                    d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M13.7071068,15.2928932 L12.2928932,16.7071068 L7.58578644,12 L12.2928932,7.29289322 L13.7071068,8.70710678 L10.4142136,12 L13.7071068,15.2928932 Z">
-                                </path>
-                            </g>
-                        </svg><a href="#" id="log-out">About</a></li>
+                        </svg><a href="/cart.html" style="position:relative">Cart<span
+                                id="badge">0</span></a></li>
+                    <li style="gap: 3px;">
+                        <img style="width: 24px; margin-right: -1px;" id="logout-img"
+                            src="./images/about-svgrepo-com.png" alt="" />
+                        <a href="#" onclick="return false" id="log-out">About</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -93,27 +89,276 @@
 
     <!-- LANDING PART ********************** LANDING PART **************************** LANDING PART  -->
 
+    <div class="menu-overlay"></div>
+
     <div class="landing-body">
         <div class="menu-bar">
-            <ul>
-                <li><img src="./images//1626345464161209agriculture-garden-landscaping (1).webp" alt="">Agriculture
-                    Gardern</li>
-                <li><img src="https://static3.industrybuying.com/navigation/161209power-tools.png" alt="">Power Tools
+            <ul onmouseover="addOverlay()" onmouseleave="removeOverlay()">
+                <li class="menu-items">
+                    <img src="./images//1626345464161209agriculture-garden-landscaping (1).webp" alt="">Agriculture
+                    Garden & Landscaping
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a id="grain-processing-machine" href="/products.html" onclick="grainMachine()" >Grain Processing Machine</a></li>
+                            <li><a href="#" onclick="return false">Tillers and Cultivater</a></li>
+                            <li><a href="#" onclick="return false">Brush Cutter and Accessories</a></li>
+                            <li><a href="#" onclick="return false">Chuff Cutter</a></li>
+                            <li><a href="#" onclick="return false">Sprayers</a></li>
+                            <li><a href="/products.html" onclick="chainSaws()" id="chain-saw">Chain Saws</a></li>
+                            <li><a href="#" onclick="return false">Water Pump Sets</a></li>
+                            <li><a href="#" onclick="return false">Lawn Mover</a></li>
+                            <li><a href="#" onclick="return false">Earth Auger</a></li>
+                            <li><a href="#" onclick="return false">Seed Planter</a></li>
+                            <li><a href="#" onclick="return false">Garden Hand Tools</a></li>
+                            <li><a href="#" onclick="return false">Fertilizer and Pest Control</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li><img src="./images/officesupplies.webp" alt="">Office Supplies</li>
-                <li><img src="./images/1626346599161209material-handling.webp" alt="">Material Handling</li>
-                <li><img src="./images/1626346831161209pumps.webp" alt="">Pumps</li>
-                <li><img src="https://static3.industrybuying.com/navigation/161209automative-maintenance.png"
-                        alt="">Automotive Maintainence</li>
-                <li><img src="./images/1627045810safety.png" alt="">Safety</li>
-                <li><img src="./images/1626345597161209cleaning.webp" alt="">Cleaning</li>
-                <li><img src="./images/1626345697161209electrical.webp" alt="">Electrical</li>
-                <li><img src="./images/1626346182161209hand-tools.webp" alt="">Hand Tools</li>
-                <li><img src="./images/1627045855testing-measuring.png" alt="">Testing Measuring</li>
-                <li><img src="./images/1626346305161209it-electronics (1).webp" alt="">IT & Electronics</li>
-                <li><img src="./images/1626345844161209furniture-hospitality.webp" alt="">Furniture and Hospitality</li>
+                <li class="menu-items">
+                    <img src="https://static3.industrybuying.com/navigation/161209power-tools.png" alt="">Power
+                    Tools
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Saws & Chasers</a></li>
+                            <li><a href="#" onclick="return false">Cordless Power Tools</a></li>
+                            <li><a href="#" onclick="return false">Tillers and Cultivater</a></li>
+                            <li><a href="#" onclick="return false">Electric Hammers & Breakers</a></li>
+                            <li><a href="#" onclick="return false">Grinders & Vibrators</a></li>
+                            <li><a href="#" onclick="return false" >Wrenches</a></li>
+                            <li><a href="#" onclick="return false">Drills</a></li>
+                            <li><a href="#" onclick="return false">Sanders & Polishers</a></li>
+                            <li><a href="#" onclick="return false">Speciality Tools</a></li>
+                            <li><a href="#" onclick="return false">Cutters</a></li>
+                            <li><a href="#" onclick="return false">Cleaning Tools</a></li>
+                            <li><a href="#" onclick="return false">Blowers & Heat Guns</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/officesupplies.webp" alt="">Office Supplies
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Office Furniture</a></li>
+                            <li><a href="#" onclick="return false">Ink Cartridge & Toner</a></li>
+                            <li><a href="#" onclick="return false">Paper & Paper Products</a></li>
+                            <li><a href="#" onclick="return false">Office Machine</a></li>
+                            <li><a href="#" onclick="return false">LED TV</a></li>
+                            <li><a href="#" onclick="return false" >Office Stationery</a></li>
+                            <li><a href="#" onclick="return false">Boards</a></li>
+                            <li><a href="#" onclick="return false">Pens, Pencils & Markers</a></li>
+                            <li><a href="#" onclick="return false">Files & Folders</a></li>
+                            <li><a href="#" onclick="return false">Desk Accessories & Organization</a></li>
+                            <li><a href="#" onclick="return false">Mailing, Shipping & Envelopes</a></li>
+                            <li><a href="#" onclick="return false">Binding & Lamination</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626346599161209material-handling.webp" alt="">Material Handling
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Hoists and Trolleys</a></li>
+                            <li><a href="#" onclick="return false">Chain Pulley Blocks and Accessories</a></li>
+                            <li><a href="#" onclick="return false">Plastic Crates</a></li>
+                            <li><a href="#" onclick="return false">Pallet Trucks</a></li>
+                            <li><a href="#" onclick="return false">Platform Trolley</a></li>
+                            <li><a href="#" onclick="return false" >Ice Box</a></li>
+                            <li><a href="#" onclick="return false">Wheel Barrows</a></li>
+                            <li><a href="#" onclick="return false">Ladder</a></li>
+                            <li><a href="#" onclick="return false">Steel Rack</a></li>
+                            <li><a href="#" onclick="return false">Storage Bins</a></li>
+                            <li><a href="#" onclick="return false">Scissor Lifting Table</a></li>
+                            <li><a href="#" onclick="return false">Slings</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626346831161209pumps.webp" alt="">Pumps
+                    <div class="mega-menu">
+                            <ul class="list-non-bullet-menu">
+                                <li><a href="#" onclick="return false" >Water Pumps</a></li>
+                                <li><a href="#" onclick="return false">Sewage Pumps</a></li>
+                                <li><a href="#" onclick="return false">Booster Pumps</a></li>
+                                <li><a href="#" onclick="return false">Engines</a></li>
+                                <li><a href="#" onclick="return false">Pump Accessories</a></li>
+                                <li><a href="#" onclick="return false" >Jet Pump</a></li>
+                                <li><a href="#" onclick="return false">Special Use Pumps</a></li>
+                                <li><a href="#" onclick="return false">Grease Pumps</a></li>
+                                <li><a href="#" onclick="return false">Rotary Pumps</a></li>
+                                <li><a href="#" onclick="return false">Multistage Pumps</a></li>
+                                <li><a href="#" onclick="return false">Self Priming Pumps</a></li>
+                                <li><a href="#" onclick="return false">Submersible Pumps</a></li>
+                                <li><a href="#" onclick="return false">See All >></a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="menu-items">
+                    <img src="https://static3.industrybuying.com/navigation/161209automative-maintenance.png"
+                        alt="">Automotive Maintainence
+                        <div class="mega-menu">
+                            <ul class="list-non-bullet-menu">
+                                <li><a href="#" onclick="return false" >Office Furniture</a></li>
+                                <li><a href="#" onclick="return false">Ink Cartridge & Toner</a></li>
+                                <li><a href="#" onclick="return false">Paper & Paper Products</a></li>
+                                <li><a href="#" onclick="return false">Office Machine</a></li>
+                                <li><a href="#" onclick="return false">LED TV</a></li>
+                                <li><a href="#" onclick="return false" >Office Stationery</a></li>
+                                <li><a href="#" onclick="return false">Boards</a></li>
+                                <li><a href="#" onclick="return false">Pens, Pencils & Markers</a></li>
+                                <li><a href="#" onclick="return false">Files & Folders</a></li>
+                                <li><a href="#" onclick="return false">Desk Accessories & Organization</a></li>
+                                <li><a href="#" onclick="return false">Mailing, Shipping & Envelopes</a></li>
+                                <li><a href="#" onclick="return false">Binding & Lamination</a></li>
+                                <li><a href="#" onclick="return false">See All >></a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1627045810safety.png" alt="">Safety
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Hoists and Trolleys</a></li>
+                            <li><a href="#" onclick="return false">Chain Pulley Blocks and Accessories</a></li>
+                            <li><a href="#" onclick="return false">Plastic Crates</a></li>
+                            <li><a href="#" onclick="return false">Pallet Trucks</a></li>
+                            <li><a href="#" onclick="return false">Platform Trolley</a></li>
+                            <li><a href="#" onclick="return false" >Ice Box</a></li>
+                            <li><a href="#" onclick="return false">Wheel Barrows</a></li>
+                            <li><a href="#" onclick="return false">Ladder</a></li>
+                            <li><a href="#" onclick="return false">Steel Rack</a></li>
+                            <li><a href="#" onclick="return false">Storage Bins</a></li>
+                            <li><a href="#" onclick="return false">Scissor Lifting Table</a></li>
+                            <li><a href="#" onclick="return false">Slings</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626345597161209cleaning.webp" alt="">Cleaning
+                    <div class="mega-menu">
+                            <ul class="list-non-bullet-menu">
+                                <li><a href="#" onclick="return false" >Pressure Washers & Accessories</a></li>
+                                <li><a href="#" onclick="return false">Vacuum Cleaners & Accessories</a></li>
+                                <li><a href="#" onclick="return false">Waste & Recycling</a></li>
+                                <li><a href="#" onclick="return false">Cleaning Liquid & essentials</a></li>
+                                <li><a href="#" onclick="return false">Wet Mops, Squeegees, and Buckets</a></li>
+                                <li><a href="#" onclick="return false" >Air Purifier Machine, Filters & Parts</a></li>
+                                <li><a href="#" onclick="return false">Window Glass Cleaner & Wipers</a></li>
+                                <li><a href="#" onclick="return false">Dust Mops, Dusters, and Cleaning Pads</a></li>
+                                <li><a href="#" onclick="return false">Insect Killer</a></li>
+                                <li><a href="#" onclick="return false">Hand Dryers</a></li>
+                                <li><a href="#" onclick="return false">Water Softening & Treatment</a></li>
+                                <li><a href="#" onclick="return false">Handwash & Sanitizer</a></li>
+                                <li><a href="#" onclick="return false">See All >></a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626345697161209electrical.webp" alt="">Electrical
+                    <div class="mega-menu">
+                            <ul class="list-non-bullet-menu">
+                                <li><a href="#" onclick="return false" >Grain Processing Machine</a></li>
+                                <li><a href="#" onclick="return false">Tillers and Cultivater</a></li>
+                                <li><a href="#" onclick="return false">Brush Cutter and Accessories</a></li>
+                                <li><a href="#" onclick="return false">Chuff Cutter</a></li>
+                                <li><a href="#" onclick="return false">Sprayers</a></li>
+                                <li><a href="#" onclick="return false" >Chain Saws</a></li>
+                                <li><a href="#" onclick="return false">Water Pump Sets</a></li>
+                                <li><a href="#" onclick="return false">Lawn Mover</a></li>
+                                <li><a href="#" onclick="return false">Earth Auger</a></li>
+                                <li><a href="#" onclick="return false">Seed Planter</a></li>
+                                <li><a href="#" onclick="return false">Garden Hand Tools</a></li>
+                                <li><a href="#" onclick="return false">Fertilizer and Pest Control</a></li>
+                                <li><a href="#" onclick="return false">See All >></a></li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626346182161209hand-tools.webp" alt="">Hand Tools
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Saws & Chasers</a></li>
+                            <li><a href="#" onclick="return false">Cordless Power Tools</a></li>
+                            <li><a href="#" onclick="return false">Tillers and Cultivater</a></li>
+                            <li><a href="#" onclick="return false">Electric Hammers & Breakers</a></li>
+                            <li><a href="#" onclick="return false">Grinders & Vibrators</a></li>
+                            <li><a href="#" onclick="return false" >Wrenches</a></li>
+                            <li><a href="#" onclick="return false">Drills</a></li>
+                            <li><a href="#" onclick="return false">Sanders & Polishers</a></li>
+                            <li><a href="#" onclick="return false">Speciality Tools</a></li>
+                            <li><a href="#" onclick="return false">Cutters</a></li>
+                            <li><a href="#" onclick="return false">Cleaning Tools</a></li>
+                            <li><a href="#" onclick="return false">Blowers & Heat Guns</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1627045855testing-measuring.png" alt="">Testing Measuring
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Hoists and Trolleys</a></li>
+                            <li><a href="#" onclick="return false">Chain Pulley Blocks and Accessories</a></li>
+                            <li><a href="#" onclick="return false">Plastic Crates</a></li>
+                            <li><a href="#" onclick="return false">Pallet Trucks</a></li>
+                            <li><a href="#" onclick="return false">Platform Trolley</a></li>
+                            <li><a href="#" onclick="return false" >Ice Box</a></li>
+                            <li><a href="#" onclick="return false">Wheel Barrows</a></li>
+                            <li><a href="#" onclick="return false">Ladder</a></li>
+                            <li><a href="#" onclick="return false">Steel Rack</a></li>
+                            <li><a href="#" onclick="return false">Storage Bins</a></li>
+                            <li><a href="#" onclick="return false">Scissor Lifting Table</a></li>
+                            <li><a href="#" onclick="return false">Slings</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626346305161209it-electronics (1).webp" alt="">Furniture and Hospitality
+                    <div class="mega-menu">
+                        <ul class="list-non-bullet-menu">
+                            <li><a href="#" onclick="return false" >Office Furniture</a></li>
+                            <li><a href="#" onclick="return false">Ink Cartridge & Toner</a></li>
+                            <li><a href="#" onclick="return false">Paper & Paper Products</a></li>
+                            <li><a href="#" onclick="return false">Office Machine</a></li>
+                            <li><a href="#" onclick="return false">LED TV</a></li>
+                            <li><a href="#" onclick="return false" >Office Stationery</a></li>
+                            <li><a href="#" onclick="return false">Boards</a></li>
+                            <li><a href="#" onclick="return false">Pens, Pencils & Markers</a></li>
+                            <li><a href="#" onclick="return false">Files & Folders</a></li>
+                            <li><a href="#" onclick="return false">Desk Accessories & Organization</a></li>
+                            <li><a href="#" onclick="return false">Mailing, Shipping & Envelopes</a></li>
+                            <li><a href="#" onclick="return false">Binding & Lamination</a></li>
+                            <li><a href="#" onclick="return false">See All >></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-items">
+                    <img src="./images/1626345844161209furniture-hospitality.webp" alt="">IT & Electronics
+                    <div class="mega-menu">
+                            <ul class="list-non-bullet-menu">
+                                <li><a href="#" onclick="return false" >Network Components</a></li>
+                                <li><a href="#" onclick="return false">Label Printer & Accessoriesv</a></li>
+                                <li><a href="#" onclick="return false">Audio</a></li>
+                                <li><a href="#" onclick="return false">Printers</a></li>
+                                <li><a href="#" onclick="return false">Storage Devices</a></li>
+                                <li><a href="#" onclick="return false" >Laptops</a></li>
+                                <li><a href="#" onclick="return false">Computer Accessories</a></li>
+                                <li><a href="#" onclick="return false">Mobiles & Accessories</a></li>
+                                <li><a href="#" onclick="return false">Computer Components</a></li>
+                                <li><a href="#" onclick="return false">Communication</a></li>
+                                <li><a href="#" onclick="return false">Laptop Accessories</a></li>
+                                <li><a href="#" onclick="return false">Projectors & Accessories</a></li>
+                                <li><a href="#" onclick="return false">See All >></a></li>
+                            </ul>
+                        </div>
+                </li>
             </ul>
-            <a href="#">See all Categories</a>
+            <a href="/" onclick="return false">See all Categories</a>
             <div class="bottom-menu">
                 <div>
                     <img src="./images/specail offers.jpg" alt="">
@@ -387,7 +632,7 @@
                             <div class="card card1">
                                 <div class="item">
                                     <div class="card-img">
-                                        <img src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.36695656_1668315290623.webp"
+                                        <img onclick="grainMachine(); redirect()" src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.36695656_1668315290623.webp"
                                             alt="">
                                     </div>
                                     <p>Grain Processing Machines</p>
@@ -433,7 +678,7 @@
                             <div class="card card1">
                                 <div class="item">
                                     <div class="card-img">
-                                        <img src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/chain-saw/electric-chain-saw/AG.CH.1441144_1667909579322.webp"
+                                        <img onclick="chainSaws(); redirect()"  src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/chain-saw/electric-chain-saw/AG.CH.1441144_1667909579322.webp"
                                             alt="">
                                     </div>
                                     <p>Electric Chain Saw</p>
@@ -993,8 +1238,10 @@
                                 src="./images/facebook-logo-svgrepo-com (2).png" alt=""></a></li>
                     <li><a href="https://www.pinterest.com/industrybuy0039/" target="_blank"><img
                                 src="./images/pinterest-logo-svgrepo-com (1).png" alt=""></a></li>
-                    <li><a href="#"><img src="./images/youtube-symbol-svgrepo-com.png" alt=""></a></li>
-                    <li><a href="#"><img src="./images/instagram-logo-facebook-2-svgrepo-com (1).png" alt=""></a></li>
+                    <li><a href="#" onclick="return false"><img src="./images/youtube-symbol-svgrepo-com.png"
+                                alt=""></a></li>
+                    <li><a href="#" onclick="return false"><img
+                                src="./images/instagram-logo-facebook-2-svgrepo-com (1).png" alt=""></a></li>
                 </ul>
             </div>
         </div>
@@ -1026,8 +1273,9 @@
             </div>
         </div>
         <div class="extreme-bottom">
-            <p>Copyright © industrybuying.com 2013-2022 All Right Reserved | &nbsp;<a href="#">Privacy Policy</a>&nbsp;
-                | &nbsp;<a href="#">Terms & Conditions</a></p>
+            <p>Copyright © industrybuying.com 2013-2022 All Right Reserved | &nbsp;<a href="#"
+                    onclick="return false">Privacy Policy</a>&nbsp;
+                | &nbsp;<a href="#" onclick="return false">Terms & Conditions</a></p>
             <div>
                 <h3>Your trusted Partner to buy Business Supplies online</h3>
                 <p>At Industrybuying.com, we are committed to offering the best online shopping experience to our
@@ -1045,9 +1293,9 @@
 </body>
 
 <script src="./scripts/nav.js"></script>
-<script>
 
-</script>
+<script src="/scripts/index.js"></script>
+
 <script src="./scripts/login.js"></script>
 
 </html>
