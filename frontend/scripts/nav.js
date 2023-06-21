@@ -55,7 +55,7 @@ if (userName) {
 
     // Generating the Logout section
     logouttxt.textContent = 'Logout';
-    logoutimg.setAttribute("src", "../images/logout-svgrepo-com.png");
+    logoutimg.setAttribute("src", "././images/logout-svgrepo-com.png");
     logoutimg.style.marginLeft = "-1";
     logoutimg.style.width = "22";
 
@@ -76,7 +76,7 @@ if (userName) {
         // tempAlert("Successfully Logged Out", 5000);
         alert("Successfully Logged Out")
         logouttxt.textContent = 'About';
-        logoutimg.setAttribute("src", "../images/about-svgrepo-com.png");
+        logoutimg.setAttribute("src", "././images/about-svgrepo-com.png");
         logoutimg.style.marginLeft = "-1";
         logoutimg.style.width = "24";
         location.reload();
@@ -84,7 +84,7 @@ if (userName) {
 }
 else {
     logouttxt.textContent = 'About';
-    logoutimg.setAttribute("src", "../images/about-svgrepo-com.png");
+    logoutimg.setAttribute("src", "././images/about-svgrepo-com.png");
     logoutimg.style.marginLeft = "-1";
     logoutimg.style.width = "24";
 }
