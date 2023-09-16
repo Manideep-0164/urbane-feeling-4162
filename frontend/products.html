@@ -8,24 +8,10 @@
     <title>Products</title>
 
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/256/marriott-hotels.png">
-    <link rel="stylesheet" href="./Styles/index.css">
-    <link rel="stylesheet" href="./Styles/login.css">
-    <link rel="stylesheet" href="./Styles/products.css">
-
-    <!-- Scroll method from jquery  -->
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                if ($(document).scrollTop() < 2000) {
-                    document.querySelector(".landing-body>.menu-bar").classList.remove("fixed-menu")
-                } else {
-                    document.querySelector(".landing-body>.menu-bar").classList.add("fixed-menu")
-                }
-            });
-        });
-    </script> -->
+    <link rel="stylesheet" href="./styles/loader.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="/Styles/products.css">
 
     <!-- Fontawesome CDN Link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -43,7 +29,7 @@
             <span></span>
             <span></span>
             <span></span>
-          </div>
+        </div>
     </div>
 
     <!-- Loader Script  -->
@@ -63,7 +49,7 @@
 
         <div class="nav-body">
             <div class="logo">
-                <a href="./index.html" style="color: white;" id="home-logo">electro<span
+                <a href="index.html" style="color: white;" id="home-logo">electro<span
                         style="color: red;">mart</span></a>
             </div>
             <div class="search nav-left-item">
@@ -95,8 +81,8 @@
                                     d="M11.25 18.75C11.25 19.58 10.58 20.25 9.75 20.25C8.92 20.25 8.25 19.58 8.25 18.75C8.25 17.92 8.92 17.25 9.75 17.25C10.58 17.25 11.25 17.92 11.25 18.75ZM16.25 17.25C15.42 17.25 14.75 17.92 14.75 18.75C14.75 19.58 15.42 20.25 16.25 20.25C17.08 20.25 17.75 19.58 17.75 18.75C17.75 17.92 17.08 17.25 16.25 17.25ZM20.73 7.68L18.73 15.68C18.65 16.01 18.35 16.25 18 16.25H8C7.64 16.25 7.33 15.99 7.26 15.63L5.37 5.25H4C3.59 5.25 3.25 4.91 3.25 4.5C3.25 4.09 3.59 3.75 4 3.75H6C6.36 3.75 6.67 4.01 6.74 4.37L7.17 6.75H20C20.23 6.75 20.45 6.86 20.59 7.04C20.73 7.22 20.78 7.46 20.73 7.68ZM19.04 8.25H7.44L8.62 14.75H17.41L19.04 8.25Z"
                                     fill="#fcfcfc"></path>
                             </g>
-                        </svg><a href="#" onclick="return false" style="position:relative">Cart<span
-                                id="badge">0</span></a></li>
+                        </svg><a href="./cart.html" id="cart-btn" style="position:relative"
+                            onclick="return checkLogin()">Cart</a></li>
                     <li style="gap: 3px;">
                         <img style="width: 24px; margin-right: -1px;" id="logout-img"
                             src="./images/about-svgrepo-com.png" alt="" />
@@ -169,24 +155,26 @@
     </div>
 
     <div class="overlay"></div>
-
+    <div class="loader-overlay"></div>
+    <div class="bar-loader">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+        <div class="bar7"></div>
+        <div class="bar8"></div>
+        <div class="bar9"></div>
+        <div class="bar10"></div>
+        <div class="bar11"></div>
+        <div class="bar12"></div>
+    </div>
 
     <!-- LANDING PART ********************** LANDING PART **************************** LANDING PART  -->
 
 
-    <div class="product-top">
-        <!-- <h2 class="heading">GRAIN PROCESSING</h2>
-        <ul>
-            <li>⟨</li>
-            <li>Agriculture & Gardening - Made In Japan</li>
-            <li>Agriculture Implements</li>
-            <li>Artificial Grass</li>
-            <li>Blowers</li>
-            <li>Brush Cutter and Accessories</li>
-            <li>Chaff Cutter</li>
-            <li>⟩</li>
-        </ul> -->
-    </div>
+    <div class="product-top"></div>
 
     <div class="product-data">
         <div class="product-filter">
@@ -197,12 +185,6 @@
             <div class="filter-type brands">
                 <h2 class="heading">BRANDS</h2>
                 <div class="brand-items">
-                    <!-- <label for="agripro"><div><input type="checkbox" class="brandCheckbox" value="AgriPro" id="agripro"><p >AgriPro <span>(15)</span></p></div></label>
-                    <label for="stethel"><div><input type="checkbox" class="brandCheckbox" value="Stethel" id="stethel"><p >Stethel</p></div></label>
-                    <label for="confider"><div><input type="checkbox" class="brandCheckbox" value="Confider" id="confider"><p >Confider</p></div></label>
-                    <label for="ricoitaly"><div><input type="checkbox" class="brandCheckbox" value="Rico Italy" id="ricoitaly"><p >Rico Italy</p></div></label>
-                    <label for="xtrapower"><div><input type="checkbox" class="brandCheckbox" value="Xtra Power" id="xtrapower"><p >Xtra Power</p>
-                    </div></label> -->
                 </div>
             </div>
             <div class="filter-type price brands">
@@ -238,70 +220,25 @@
         </div>
         <div class="products">
             <div class="product-heading">
-                <h1 class="GPM"><span
-                        style="font-size: 14px; margin-top: 2.8px;"></span></h1>
+                <h1 class="GPM"><span style="font-size: 14px; margin-top: 2.8px;"></span></h1>
                 <select id="sort">
                     <option value="">Sort</option>
-                    <option value="low-high">Price - Low to High</option>
-                    <option value="low-high">Price - High to Low</option>
-                    <option value="low-high">Name - Low to High</option>
-                    <option value="low-high">Name - High to Low</option>
+                    <option value="Name - Low to High">Name - Low to High</option>
+                    <option value="Name - High to Low">Name - High to Low</option>
+                    <option value="Price - Low to High">Price - Low to High</option>
+                    <option value="Price - High to Low">Price - High to Low</option>
                 </select>
             </div>
             <div class="products-container">
                 <div class="card-container">
-                    <!-- <div class="card">
-                    <div class="img"><img src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.82125517_1670416542273.webp" alt=""></div>
-                    <div class="info">
-                        <p class="name">AgriPro 3 HP Butterfly Combined Rice Mill Machine</p>
-                        <p class="brand">AgriPro</p>
-                        <p class="price">Rs. <span>26500</span> / Piece</p>
-                    </div>
-                    <button class="addToCart">
-                        ADD TO CART
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.82125517_1670416542273.webp" alt=""></div>
-                    <div class="info">
-                        <p class="name">AgriPro 3 HP Butterfly Combined Rice Mill Machine</p>
-                        <p class="brand">AgriPro</p>
-                        <p class="price">Rs. <span>26500</span> / Piece</p>
-                    </div>
-                    <button class="addToCart">
-                        ADD TO CART
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.82125517_1670416542273.webp" alt=""></div>
-                    <div class="info">
-                        <p class="name">AgriPro 3 HP Butterfly Combined Rice Mill Machine</p>
-                        <p class="brand">AgriPro</p>
-                        <p class="price">Rs. <span>26500</span> / Piece</p>
-                    </div>
-                    <button class="addToCart">
-                        ADD TO CART
-                    </button>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image:url('https://static1.industrybuying.com/products/agriculture-garden-landscaping/grain-processing-machine/AGR.GRA.82125517_1670416542273.webp')"></div>
-                    <div class="info">
-                        <p class="name">AgriPro 3 HP Butterfly Combined Rice Mill Machine</p>
-                        <p class="brand">AgriPro</p>
-                        <p class="price">Rs. <span>26500</span> / Piece</p>
-                    </div>
-                    <button class="addToCart">
-                        ADD TO CART
-                    </button>
-                </div> -->
                 </div>
             </div>
         </div>
     </div>
 
-     <!-- FOOTER OF THE WEBSITE ********************** FOOTER OF THE WEBSITE ****************************FOOTR OF THE WEBSITE  -->
+    <!-- FOOTER OF THE WEBSITE ********************** FOOTER OF THE WEBSITE ****************************FOOTR OF THE WEBSITE  -->
 
-     <div class="footer-cont">
+    <div class="footer-cont">
         <div class="middle">
             <div class="logo">
                 <p style="color: white; font-size: 28px; margin: 0px;">electro<span style="color: red;">mart</span></p>
